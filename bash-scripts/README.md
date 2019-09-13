@@ -1,0 +1,1 @@
+dr: copies daily report template renaming it to the today's date, ready for writing daily reports

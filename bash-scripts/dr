@@ -1,0 +1,12 @@
+#!/bin/bash
+read Y M  D  MM <<< $(date +'%Y %m %d')
+base_path=~/Documents/dailyReports
+file_name="dailyreport-$Y-$M-$D.adoc"
+full_path="$base_path/$file_name"
+template_full_path="$base_path/dailyReport-template.adoc"
+
+
+if [ ! -e "$full_path" ]; then
+  sed "s/%current-date%/$Y-$M-$D/g" <  "$template_full_path" > "$full_path"
+fi
+echo  $full_path

@@ -1,0 +1,27 @@
+#+title: Homework Sample Template
+# We need fancyhdr to generate the header and amsmath to typeset certain math symbols
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \usepackage{amsmath}
+# Don't export table of contents. 
+#+OPTIONS: toc:nil
+# Don't make a title page.
+#+BIND: org-export-latex-title-command ""
+# Don't do automatic section numbering, as they will not correspond with problem
+#    numbers from the book
+#+LATEX: \setcounter{secnumdepth}{-1}
+
+* Homework Sample Template
+#+LATEX: \pagestyle{fancy}
+#+LATEX: \fancyhead{}
+#+LATEX: \rhead{\textit{Your Name Here}}
+#+LATEX: \lhead{\textit{Class Name}}
+#+LATEX: \small
+
+# Use manual numbering to match up with assigned problem numbers.
+** 19.8
+# I like to use Org-mode's bulleting for proofs.
+   - Let $A$ and $B$ be sets.
+   - For the sake of contradiction assume that $(A-B) \cap (B-A)$ is not empty.
+   - Therefore there must be an element $x$ where $x \in (A-B)$ and $x \in (B-A)$.
+   - As a result, $x \in A \land \notin B$ and $x \in A \land \notin B$ by the definition of set subtraction.
+   - We have a contradiction, and must therefore conclude that (A-B) \cap (B-A) = \emptyset .
